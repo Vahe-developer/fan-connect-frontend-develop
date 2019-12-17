@@ -1,0 +1,37 @@
+.fcsp-register-header {
+
+  .fcspid-title {
+    margin-bottom: 20px;
+  }
+
+  .fcspid-title + .row {
+    margin-bottom: 40px;
+  }
+
+  .fcsp-id-headers {
+    text-align: center;
+
+    div {
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  .fcsp-id-checkbox-section {
+    position: relative;
+    padding-left: 20px;
+
+    div {
+      text-transform: uppercase;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    i {
+      position: absolute;
+      left: 0;
+      top: 3px;
+    }
+  }
+}

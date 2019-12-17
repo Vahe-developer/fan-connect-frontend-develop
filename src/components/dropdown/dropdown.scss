@@ -1,0 +1,70 @@
+.dd-wrapper {
+  position: relative;
+  text-align: left;
+  margin-left: 16px;
+  margin-right: 24px;
+
+
+  li {
+    list-style-type: none;
+  }
+
+  .dd-header {
+    position: relative;
+    cursor: pointer;
+    border: none;
+    padding: 8px;
+    border-bottom: 1px solid #efefef;
+
+    span.arrow {
+      position: absolute;
+      top: 8px;
+      right: 0;
+    }
+  }
+
+  .dd-list {
+    position: absolute;
+    background: white;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 10px 0;
+    max-height: 320px;
+    margin-top: 8px;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 0 1px 12px #efefef;
+    color: black;
+
+    .dd-list-item {
+      padding: 8px 8px;
+
+      &.selected {
+        background: #2b8eff;
+        color: white;
+      }
+
+      &.selected:hover {
+        background: #2b8eff;
+        color: white;
+      }
+
+
+    }
+
+    .dd-list-item:hover {
+      background: #e2eeff;
+      cursor: pointer;
+    }
+
+
+    .parallax-item .scroll-arrow {
+      display: none !important;
+    }
+  }
+
+
+}

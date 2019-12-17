@@ -1,0 +1,126 @@
+.phone-input {
+
+  .phone-with-flags {
+    display: grid;
+    grid-template-columns: minmax(24px, 24px) 10fr;
+
+    .country-with-code {
+      line-height: 24px;
+      align-self: end;
+      margin-right: 8px;
+    }
+
+    .flag {
+      margin-top: 5px;
+    }
+  }
+
+
+  .dd-wrapper {
+    margin: 0;
+
+    .dd-header {
+      max-width: 100px;
+      min-width: 80px;
+      float: left;
+      border-bottom: none;
+    }
+
+    .dd-list {
+      margin-top: 40px;
+    }
+  }
+
+  padding: 1px;
+  font-size: 16px;
+  border-bottom: 1px solid #efefef;
+
+  &.border-red {
+    border: 1px solid red;
+  }
+
+  .custom-phone-input {
+    padding: 3px 0;
+
+    input {
+      width: 210px;
+      border: none;
+
+      @media(max-width: 360px) {
+        width: 152px;
+      }
+    }
+
+    &.color-red {
+      input::placeholder {
+        color: #E20613;
+      }
+    }
+  }
+
+  .react-tel-input {
+    width: 24px;
+    float: left;
+
+    input[type=tel] {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding-left: 0;
+      padding-right: 4px;
+    }
+
+    input[type=tel].form-control:focus {
+      box-shadow: none;
+    }
+
+    .flag-dropdown {
+      cursor: pointer !important;
+      background: white;
+      border: none;
+      border-radius: 10px;
+      z-index: 1;
+
+    }
+
+    .country-list {
+      margin-left: 24px;
+
+      .country:hover {
+        background: #e2eeff;
+      }
+
+      .country.highlight {
+      }
+    }
+  }
+
+  .react-tel-input {
+    width: 88px;
+
+    input[type=tel] {
+      width: 88px;
+      padding-left: 40px;
+    }
+  }
+
+  .flag-dropdown {
+    left: 0;
+    cursor: pointer;
+  }
+
+  .react-tel-input {
+    .country-list {
+      margin-left: 8px;
+    }
+
+    .country.highlight {
+      background: #2b8eff !important;
+      color: white;
+
+      .dial-code {
+        color: white;
+      }
+    }
+  }
+}

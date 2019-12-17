@@ -1,0 +1,117 @@
+build-stage-cdn:
+  services:
+    - docker:18.09.7-dind
+  image: docker:latest
+  stage: build
+  script:
+    - ./scripts/build-scripts.sh $(pwd) $CI_BUILD_REF $CI_BUILD_TOKEN dev-fcsp fcspstage.myfan.co
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  dependencies: []
+  only:
+    - develop
+
+deploy-stage-cdn:
+  services:
+    - docker:18.09.7-dind
+  stage: deploy
+  image: python:3.6
+  dependencies:
+    - build-stage-cdn
+  script:
+    - export AWS_ACCESS_KEY_ID=$DEV_AWS_ACCESS_KEY_ID
+    - export AWS_SECRET_ACCESS_KEY=$DEV_AWS_SECRET_ACCESS_KEY
+    - ./scripts/deploy-script.sh ${PWD}/build/ $STAGE_S3_FRONTEND_BUCKET $STAGE_DISTRIBUTION_ID
+  #after_script:
+  #  - curl -s https://api.ghostinspector.com/v1/suites/5b9a1e3374a75425264ac85a/execute/?apiKey=e87567bb251347aba94a0f471202187b5b89b966
+  only:
+    - develop
+
+build-demo-cdn:
+  services:
+    - docker:18.09.7-dind
+  image: docker:latest
+  stage: build
+  script:
+    - ./scripts/build-scripts.sh $(pwd) $CI_BUILD_REF $CI_BUILD_TOKEN demo-fcsp fcspdemo.myfan.co
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  dependencies: []
+  only:
+    - demo
+
+deploy-demo-cdn:
+  services:
+    - docker:18.09.7-dind
+  stage: deploy
+  image: python:3.6
+  dependencies:
+    - build-demo-cdn
+  script:
+    - export AWS_ACCESS_KEY_ID=$DEV_AWS_ACCESS_KEY_ID
+    - export AWS_SECRET_ACCESS_KEY=$DEV_AWS_SECRET_ACCESS_KEY
+    - ./scripts/deploy-script.sh ${PWD}/build/ $DEMO_S3_FRONTEND_BUCKET $DEMO_DISTRIBUTION_ID
+  only:
+    - demo
+
+build-prod-cdn:
+  services:
+    - docker:18.09.7-dind
+  image: docker:latest
+  stage: build
+  script:
+    - ./scripts/build-scripts.sh $(pwd) $CI_BUILD_REF $CI_BUILD_TOKEN prod-fcsp fcsp.myfan.co
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  dependencies: []
+  only:
+    - master
+
+
+deploy-prod-cdn:
+  services:
+    - docker:18.09.7-dind
+  stage: deploy
+  image: python:3.6
+  dependencies:
+    - build-prod-cdn
+  script:
+    - ./scripts/deploy-script.sh ${PWD}/build/ $PROD_S3_FRONTEND_BUCKET $PROD_DISTRIBUTION_ID
+  only:
+    - master
+
+
+build-towers-cdn:
+  services:
+    - docker:18.09.7-dind
+  image: docker:latest
+  stage: build
+  script:
+    - ./scripts/build-scripts.sh $(pwd) $CI_BUILD_REF $CI_BUILD_TOKEN dev-towers towersstage.myfan.co
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+  dependencies: []
+  only:
+    - towers
+
+deploy-towers-cdn:
+  services:
+    - docker:18.09.7-dind
+  stage: deploy
+  image: python:3.6
+  dependencies:
+    - build-towers-cdn
+  script:
+    - export AWS_ACCESS_KEY_ID=$DEV_AWS_ACCESS_KEY_ID
+    - export AWS_SECRET_ACCESS_KEY=$DEV_AWS_SECRET_ACCESS_KEY
+    - ./scripts/deploy-script.sh ${PWD}/build/ $TOWERS_S3_FRONTEND_BUCKET $TOWERS_DISTRIBUTION_ID
+  only:
+    - towers

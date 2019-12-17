@@ -1,0 +1,30 @@
+.channel-linking-content {
+
+  .top-text {
+    margin-top: 16px;
+  }
+
+  .policy-text {
+    text-align: justify;
+    font-size: 12px;
+    padding: 10px 0;
+    color: grey;
+    margin-top: 10px;
+    //height: 150px;
+    //overflow: scroll;
+  }
+
+  .disableable {
+    display: block;
+  }
+
+  button {
+    width: 100%;
+    color: white;
+    height: 36px;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}

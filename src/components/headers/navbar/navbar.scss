@@ -1,0 +1,39 @@
+.fcsp-navbar {
+  overflow: hidden;
+  text-align: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000000;
+  position: fixed;
+
+  .navbar-texts {
+    color: white;
+    line-height: 56px;
+
+    &.active {
+      border-bottom: 3px white solid;
+    }
+  }
+
+  @media (max-width: 340px) {
+    .navbar-links:last-child {
+      padding: 0;
+    }
+  }
+  @media (max-width: 760px) {
+    .preference {
+      float: left;
+    }
+
+    .profile {
+      float: right;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+

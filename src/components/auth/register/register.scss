@@ -1,0 +1,36 @@
+.register-form {
+  max-width: 420px;
+  margin: 0 auto;
+
+  h5 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  input, .radio-button-container {
+    border-bottom: 1px #efefef solid;
+  }
+
+  .button-policy-container {
+    padding: 10px;
+  }
+
+  .fa-question-circle {
+    margin: 5px;
+  }
+
+  .merge-account-block {
+    padding: 20px;
+    padding-bottom: 0;
+    margin: 0 auto;
+    color: palevioletred;
+  }
+}
+
+.other-suggestions {
+  margin: 20px auto;
+}
+
+.client-reg-form-btn {
+  margin: 20px 20px 20px 0;
+}

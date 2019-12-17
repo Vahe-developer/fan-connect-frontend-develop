@@ -1,0 +1,88 @@
+.gender-checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  font-size: 14px ;
+  margin-right: 8px;
+
+  .pointer {
+    cursor: pointer;
+  }
+  .pointer.color-red {
+    color: #E20613;
+  }
+
+  .form-check {
+    padding-left: 1.5em;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: black;
+  }
+
+  input:checked + span {
+    color: black;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+  }
+}
+.radio-button-container {
+  color: grey;
+  padding: 10px;
+  border-bottom: 1px #efefef solid;
+
+  .radio-title {
+    font-size: 14px;
+  }
+
+  .radio-title.color-red {
+    color: #E20613;
+  }
+}
+.radio-button-container.border-red {
+  border-bottom: 1px red solid!important;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  float: right;
+  position: absolute;
+  top: 0.23em;
+  left: 0px;
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+

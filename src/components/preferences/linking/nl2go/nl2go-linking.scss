@@ -1,0 +1,20 @@
+.set-email-nl2go {
+  .subscribe-button-section {
+    margin: 10px -15px;
+  }
+
+  .error-sign {
+    position: relative;
+
+    .fa-exclamation-triangle {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      color: red;
+    }
+  }
+
+  .error p {
+   margin-bottom: 0;
+  }
+}

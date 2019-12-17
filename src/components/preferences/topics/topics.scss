@@ -1,0 +1,38 @@
+.channels-topics {
+
+  .title {
+    margin-bottom: 4px;
+  }
+
+  .text {
+    padding-right: 50px;
+  }
+
+  .checked,
+  .unchecked {
+    position: absolute;
+    right: 1rem;
+    top: 4px;
+    font-size: 24px;
+  }
+
+  .topic {
+    margin: 16px auto 0 auto;
+    max-width: 800px;
+    padding: 15px;
+  }
+
+  .frequency.line {
+    margin-bottom: 24px;
+    max-width: 435px;
+  }
+
+  .other-features {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+
+
+

@@ -1,0 +1,32 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "react-app"
+    //    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-console": "error",
+    "no-alert": "error",
+    "no-array-constructor": "error",
+    "no-debugger": "error",
+    "no-else-return": "error",
+    "no-eval": "error",
+    "no-undef": "error",
+    "no-unused-vars": "error",
+    "no-unused-labels": "error",
+    "no-unused-expressions": "error"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}

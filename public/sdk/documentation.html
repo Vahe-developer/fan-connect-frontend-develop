@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SDk documentation</title>
+    <style>
+        h1, h2 {
+            text-align: center;
+        }
+
+        div {
+            margin-bottom: 128px;
+        }
+
+        code {
+            color: #2b8eff;
+        }
+
+        ul, p {
+            width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style-type: decimal;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        table th, table td {
+            text-align: left;
+            border: 1px grey solid;
+        }
+
+        .code-example {
+            color: #E20613;
+        }
+    </style>
+</head>
+<body>
+
+<h1>SDK documentation</h1>
+<div>
+    <ul>
+        Firstthing First , you have to initialise sdk by <code>FCSPAuth = new MyfanAuth()</code>
+
+        <li> Add <a href="https://fcspdemo.myfan.co/sdk/latest/index.js">
+            https://fcspdemo.myfan.co/sdk/latest/index.ts </a>
+            script
+            to your html document (for example index.html).
+            Then <code>FCSPAuth</code> global variable will be accessable to your project.
+            <pre>Example:
+            <code>
+    &lthtml&gt
+        &lthead&gt
+              &ltscript src="https://fcspdemo.myfan.co/sdk/index.ts"&gt &lt/script&gt
+        &lt/head&gt
+        &ltbody&gt
+                ...//
+        &lt/body&gt
+    &lt/html&gt
+            </code></pre>
+        </li>
+        <li> Call <code>FCSPAuth.init(url)</code> with login auth url to initialize
+            iframe login page.
+            The login <code>url</code> variable is your auth url that you use to useConnect with FCSP.ID platform.
+            <pre>For example:
+
+        <a href="https://fcsp.official-vip.com/stage3/FanConnect/login/">https://fcsp.official-vip.com/stage3/FanConnect/login/</a>
+            </pre>
+        </li>
+        <li>
+            Call <code>FCSPAuth.show()</code> to actually show the FCSP.ID page.
+            Also you can provide route path variable optionally to open that page
+            when showing iframe.
+            <pre>Example: <code>FCSPAuth.show('/authorization/login')</code></pre>
+        </li>
+        <li>
+            <pre>Call <code>  showLoader(function () {
+        return htmlElement;
+      }) </code>
+</pre>
+            method , with function that returns html element, which will be shown while
+            iframe is loading , after iframe completes its loading, it will be hidden.
+            If you don’t provide any argument to showLoader() function , grey overlay will
+            be shown on the page by default.
+        </li>
+        <li> After initialization call <code>FCSPAuth.onLoad()</code> with callback function to execute after
+            iframe
+            loaded.
+            <pre>Example: <code>
+                FCSPAuth.onLoad(function () {
+                     FCSPAuth.show()
+                })</code>
+            </pre>
+        </li>
+        <li> Also can navigate to any page by <code>navigate('/path')</code>
+            <pre>
+            <code> FCSPAuth.navigate('/authorization/login')</code>,
+            <code> FCSPAuth.navigate("/register")</code>,
+            <code> FCSPAuth.navigate("/profile")</code>,
+            <code> FCSPAuth.navigate("/p")</code>(preference),
+    </pre>
+        </li>
+        <li> After that put listener for login action
+            Example:
+            <pre>
+                <code>FCSPAuth.on('login', function (res) {
+
+                    var accessTtoken = res.data.access_token;
+                    var idToken      = res.data.id_token;
+                    var State        = res.data.state;
+                    //...
+                })</code>.
+            </pre>
+            <code>res</code> will return object containing data abject with "access_token",
+            "id_token" and "state" to initialize login on your website.
+            Also you can listen to "unauthorize" event to detect unauthorzed user.
+            <pre>Example:
+                <code>FCSPAuth.on('unauthorize', function (res) {
+                   FCSPAuth.show("/login")
+                    //...
+                })</code>
+            </pre>
+        </li>
+        <li> And the last call <code>close()</code> to close iframe any time you want.
+            Alternativly you can call hideElements() to just hide iframe, if you are planning to use it later.
+            Or call FCSPAuth.init(url) and the rest of the code every time you are using sdk,
+            just to be sure that iframe is loaded.
+        </li>
+    </ul>
+    <h2>Example</h2>
+    <pre>
+    <p>  <code>
+        <span class="code-example">
+    FCSPAuth
+        .init(authUrl)
+        .showLoader()
+        .onLoad(function () {
+            FCSPAuth.show()
+        })
+        .navigate("/login")
+        .on('login', function (res) {
+</span>
+        var form = window.document.forms["auth_form_federated"];
+
+        if (!form) {
+            console.log('form not founded')
+            return;
+        }
+
+        form.getElementsByClassName('id_token')[0].value = res.data.id_token;
+        form.getElementsByClassName('access_token')[0].value = res.data.access_token;
+        form.getElementsByClassName('state')[0].value = res.data.state;
+        form.submit();
+<span class="code-example">
+        FCSPAuth.close()
+    });
+</span>
+
+        </code>
+</pre>
+    </p>
+    <h1>Payment documentation</h1>
+    <ul>
+        <li>
+            in order to buy something with FCSP.ID , you need to cal <code>buy(item)</code>
+            with item id,name, price, currency.
+            <pre> Example:
+                <code>
+                    var item = {}
+
+                    item.id = $(this).data('id');
+                    item.name = $(this).data('name');
+                    item.price = $(this).data('price');
+                    item.currency = $(this).data('currency');
+
+                    FCSPAuth.buy(item)
+                    </code>
+            </pre>
+        </li>
+        <li>
+            After call there is a event to listen "payment.failed" and "payment.success".
+            <pre>Example:
+            <code>
+                 FCSPAuth
+                    .buy(item)
+                    .on('payment.success', function (){
+
+                        //.. congrats, payment was done!
+                    })
+                    .on('payment.failed', function (err){
+
+                       switch (err.data.type) {
+                            case 'paypal.not.connected':
+                                FCSPAuth
+                                    .show()
+                                    .navigate('/paypal-connect')
+                                break
+                            default:
+                                // TODO default case
+                                console.log(err)
+                        }
+                    })
+            </code>
+            </pre>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

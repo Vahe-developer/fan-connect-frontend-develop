@@ -1,0 +1,46 @@
+.password-strength {
+
+  margin-bottom: 16px;
+
+  .strength-blocks {
+    height: 16px;
+    border: 1px solid grey;
+    width: 23%;
+    display: inline-block;
+    margin-right: 4px;
+  }
+
+  .green {
+    color: green;
+  }
+
+  .green-bg {
+    background: green;
+  }
+
+  .greener-bg {
+    background: darkgreen;
+  }
+
+  .red-bg {
+    background: red;
+  }
+
+  .orange-bg {
+    background: orange;
+  }
+
+  p {
+    display: grid;
+    grid-template-columns: 1fr 18fr;
+    margin: 0;
+    color: grey;
+  }
+
+  i {
+    margin-top: 4px;
+    margin-right: 8px;
+  }
+
+}
+

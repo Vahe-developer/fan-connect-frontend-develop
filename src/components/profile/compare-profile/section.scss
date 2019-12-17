@@ -1,0 +1,59 @@
+.compare-profile-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+
+  .justify-content-space-evenly{
+    display: flex;
+    justify-content: space-evenly;
+    -webkit-justify-content: space-around;
+
+  }
+
+  .compare-profile-block{
+    margin: 10px;
+  }
+
+  .logout-btn{
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .button-section {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    padding-left: 0;
+    border-bottom: grey 1px solid;
+    cursor: pointer;
+
+    i {
+      padding-top: 10px;
+      float: right;
+    }
+
+    button {
+      font-size: 18px;
+      background: white;
+      text-align: left;
+      border: none;
+    }
+  }
+
+  .fields-section {
+    padding-left: 5px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    p {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+  }
+
+  .select-profile-section {
+    text-align: center;
+  }
+}

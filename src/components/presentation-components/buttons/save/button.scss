@@ -1,0 +1,19 @@
+.button-container {
+  margin-top: 24px;
+  padding: 10px;
+  text-align: center;
+}
+
+.save-button {
+  background-color: rgb(23, 27, 58)!important;
+  border-radius: 30px!important;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.save-button[disabled] {
+  opacity: 0.5;
+}

@@ -1,0 +1,59 @@
+.old-input {
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .progress  {
+    border-radius: 0;
+    height: 2px;
+    position: relative;
+  }
+
+  .progress-bar {
+    background-color: #181818;
+  }
+
+  .error-sign {
+    position: relative;
+
+    .fa-exclamation-triangle {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      color: red;
+    }
+  }
+
+  input {
+    outline: none;
+    background: white;
+    box-shadow:  4px 4px 0 0 #cbcbcb;
+    padding: 4px 32px 4px 8px;
+    width: 100%;
+    height: 48px;
+    font-size: 20px;
+
+    &:-webkit-autofill {
+      // Expose a hook for JavaScript when auto fill is shown.
+      // JavaScript can capture 'animationstart' events
+      animation-name: onAutoFillStart;
+
+      // Make the backgound color become yellow _really slowly_
+      transition: background-color 2s ease-in-out 0s;
+    }
+
+    @keyframes onAutoFillStart {
+    }
+
+  }
+
+  .errors {
+    font-weight: 400;
+    margin: 0 0 5px 0;
+  }
+
+  .steps {
+    font-size: 12px;
+  }
+}

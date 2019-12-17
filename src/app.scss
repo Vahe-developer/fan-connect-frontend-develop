@@ -1,0 +1,154 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: 'Futura';
+  src: url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/Futura_Extra_Bold[1]_Windows.ttf') format('truetype'),
+  url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/Futura_ExtraBold_Apple.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/Futura_Extra_Bold[1]_Windows.ttf') format('truetype'),
+  url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/Futura_ExtraBold_Apple.otf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/Futura_Book_Apple.otf') format('truetype'),
+  url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/Futura_Book_Windows.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesomeSolid';
+  src: url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/fa-solid-900.woff2') format('truetype'),
+  url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/fa-solid-900.woff2') format('truetype'),
+  url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/fa-solid-900.woff2') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesomeRegular';
+  src: url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/fa-regular-400.ttf') format('truetype'),
+  url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/fa-regular-400.woff') format('truetype'),
+  url('https://s3.eu-central-1.amazonaws.com/myfan-fonts/fa-regular-400.woff2') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  outline: none !important;
+  //color: black;
+}
+
+body {
+  font-size: .875rem;
+  font-family: "Futura", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+  background: #fff;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+.disableable[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#root {
+  background: #fff;
+  //min-height: 100vh;
+}
+
+/*#hubspot-messages-iframe-container {
+  visibility: hidden;
+}*/
+
+input {
+  padding: 4px 8px;
+  border: 1px solid #e1e1e1;
+}
+
+.loading {
+  margin: 50px auto;
+}
+
+.color-red {
+  color: #E20613;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.title-18 {
+  font-size: 18px;
+}
+
+.sub-title {
+  font-size: 16px;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.color-grey {
+  color: grey;
+}
+
+.color-red {
+  color: #d3363b;
+}
+
+.color-black {
+  color: black;
+}
+
+.uppercase:not[label] {
+  text-transform: uppercase;
+}
+
+.lowercase:not(label) {
+  text-transform: lowercase;
+}
+
+.link-like {
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 320px) {
+
+  .text {
+    font-size: 12px;
+  }
+
+}
+
+
+

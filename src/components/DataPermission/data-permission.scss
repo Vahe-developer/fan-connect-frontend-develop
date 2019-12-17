@@ -1,0 +1,59 @@
+*:focus {
+  outline: none !important;
+}
+
+.permission-main-content {
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 520px;
+  margin: 30px auto;
+  text-align: center;
+
+  .data-permission-privacy {
+    margin-top: 32px;
+    text-align: left;
+    color: grey;
+
+    a {
+      color: red;
+    }
+  }
+}
+
+.eventim-sport-img {
+  margin: 20px auto;
+  display: block;
+  max-width: 100%;
+  max-height: 14em;
+}
+
+.data-info {
+  display: block;
+  line-height: 24px;
+}
+
+
+.permission-main-content .action-buttons {
+  margin-top: 30px;
+
+  .sign-in {
+    height: 36px;
+  }
+
+  button {
+    min-width: 128px;
+    letter-spacing: 2px;
+  }
+}
+
+.permission-main-content .action-buttons .cancel-wrapper {
+  padding-top: 32px;
+}
+
+.permission-main-content .with-comma::after {
+  content: ', ';
+}
+
+.permission-main-content .with-comma:last-child::after {
+  content: '';
+}

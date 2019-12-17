@@ -1,0 +1,66 @@
+.data-managment {
+
+  .apps-section {
+
+    padding-left: 0;
+    padding-right: 0;
+    margin: 8px auto;
+    display: grid;
+    grid-template-columns: 18fr 1fr;
+    border-bottom: #efefef 1px solid;
+
+    .go-to-link {
+      width: 96px;
+    }
+
+    .checkbox {
+      min-width: 18px;
+      margin-top: 2px;
+      margin-right: 8px;
+      margin-bottom: 2px;
+
+      i {
+        font-size: 18px;
+      }
+
+      .checked {
+        cursor: pointer;
+      }
+    }
+
+    .app-desc {
+
+      p {
+        padding-right: 64px;
+      }
+
+      button {
+        margin-bottom: 8px;
+
+        i {
+          margin-left: 4px;
+        }
+      }
+    }
+
+
+    .app-desc.connect {
+      display: grid;
+      grid-template-columns: 10fr 1fr;
+
+      p {
+        padding-right: 0;
+      }
+
+      div {
+        padding-right: 24px;
+      }
+    }
+
+    &.connect {
+      display: grid;
+      grid-template-columns: 10fr 0;
+    }
+  }
+}
+

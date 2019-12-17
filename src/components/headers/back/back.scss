@@ -1,0 +1,29 @@
+.go-back-section {
+  border-bottom: 3px black solid;
+  font-size: 24px;
+}
+
+.go-back-section:hover {
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+.go-back-container {
+  padding: 5px;
+
+  .text-container i {
+    margin-right: 8px;
+  }
+
+  .text-container {
+    margin: 0 auto;
+    max-width: 460px;
+    position: relative;
+  }
+
+  .text-container {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+  }
+}

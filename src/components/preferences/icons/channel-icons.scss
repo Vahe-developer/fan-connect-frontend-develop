@@ -1,0 +1,41 @@
+.channel-icons {
+
+  margin: 20px auto;
+  display: flex;
+  min-height: 216px;
+  justify-content: space-evenly;
+  -webkit-justify-content: space-around;
+
+  i {
+    color: #949494;
+    cursor: pointer;
+  }
+
+  .channel-item {
+    line-height: 44px;
+    text-align: center;
+    min-width: 94px;
+
+    &.active {
+      .icon, .fa-circle {
+        color: black;
+      }
+    }
+  }
+
+  .fa-whatsapp, .fa-envelope, .fa-cookie-bite {
+    font-size: 48px;
+  }
+
+  .fa-cookie-bite {
+    margin-top: 3px;
+    font-size: 40px;
+    vertical-align: middle;
+    margin-bottom: 16px;
+  }
+}
+
+.channel-linking {
+  max-width: 500px !important;
+  margin: 0 auto;
+}

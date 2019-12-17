@@ -1,0 +1,14 @@
+.country-flag-icons {
+
+  text-align: right;
+
+  img {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

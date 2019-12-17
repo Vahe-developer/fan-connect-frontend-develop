@@ -1,0 +1,124 @@
+.profile-main-container {
+
+  .section-blocks {
+    display: grid;
+
+    @media(min-width: 900px) {
+
+      grid-template-columns: repeat(2, 1fr);
+
+      .section-block.block-membership {
+        grid-area: membership;
+      }
+
+      .section-block.block-polls {
+        grid-area: polls;
+      }
+
+      .section-block.block-personalData {
+        grid-area: personal-data;
+      }
+
+      .section-block.block-loginData {
+        grid-area: login-data;
+        margin-bottom: 10px;
+      }
+
+      .section-block.block-addressInfo {
+        grid-area: address;
+      }
+      .section-block.block-paypal {
+        grid-area: paypal;
+      }
+
+      .section-block.block-favPlayer {
+        grid-area: favPlayer;
+      }
+
+      .section-block.block-appConnections {
+        grid-area: app-connection;
+      }
+    }
+
+    @media(max-width: 899px) {
+      grid-template-columns: 1fr !important;
+      grid-template-areas: unset !important;
+    }
+
+  }
+
+  .fan-profile-text {
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .buttons {
+    width: 200px;
+    margin: 16px auto;
+    text-align: center;
+
+    button {
+      margin-top: 32px;
+    }
+
+    button.mediaMax {
+      width: 200px;
+      height: 36px;
+    }
+
+    @media (max-width: 420px) {
+      padding: 16px;
+      width: 100%;
+
+      button.mediaMax {
+        width: 100%;
+      }
+    }
+  }
+
+  .pass-input {
+
+    display: grid;
+    grid-template-columns: minmax(100px, 10fr) minmax(150px, 5fr);
+
+    width: 100%;
+    padding: 1px 0;
+    margin: 0;
+
+    .placeholder {
+      margin-top: 12px;
+      padding-left: 0;
+
+      input {
+        border: none;
+        color: black;
+        background: white;
+      }
+    }
+
+    .pass-change {
+      justify-self: end;
+    }
+
+    @media (max-width: 420px) {
+      .placeholder {
+        display: none;
+      }
+
+      grid-template-columns: 1fr;
+
+      .pass-change {
+        justify-self: normal;
+      }
+    }
+  }
+}
+
+.i-disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: .5;
+}
+
+

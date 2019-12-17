@@ -1,0 +1,14 @@
+.footer {
+  max-width: 440px;
+  padding: 32px;
+  margin: 0 auto;
+
+  a {
+    color: #212529;
+    text-decoration: none;
+  }
+
+  @media(max-width: 580px) {
+    text-align: center;
+  }
+}

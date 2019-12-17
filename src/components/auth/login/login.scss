@@ -1,0 +1,30 @@
+.login-block {
+
+  max-width: 400px;
+  margin: 40px auto 0;
+
+  .login-header {
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .login-input-button-block {
+    margin-bottom: 60px;
+    text-align: left;
+
+  }
+
+  .other-suggestions {
+
+    div {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 8px;
+    }
+  }
+}
+
